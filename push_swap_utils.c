@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/02/23 15:41:56 by tmontani         ###   ########.fr       */
+/*   Created: 2024/02/23 13:32:52 by tmontani          #+#    #+#             */
+/*   Updated: 2024/02/23 14:39:03 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "../libft/libft.h"
-typedef struct s_stack {
-	long value;
-	struct s_stack* next;
-}					t_stack;
+#include "push_swap.h"
 
-#endif
+struct stack_a {
+	int value;
+	struct stack_a* next;
+};
+typedef struct stack_a stack_a;
