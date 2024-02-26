@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/02/23 15:48:54 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:18:43 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void add_new_node(long atoi_result, t_stack **stack_a)
 	new_node = malloc(sizeof(t_stack *));
 	if (!new_node)
 		return ;
-	(*stack_a)->value = atoi_result;
-	(*stack_a)->next = NULL;
+	new_node->value = atoi_result;
+	new_node->next = NULL;
 
-	printf("value: %d", value);
+	printf("value: %d", new_node->value);
 	//find_last_node() 
 }
 void	ft_handle_single_str(char **array, t_stack **stack_a)
@@ -32,10 +32,11 @@ void	ft_handle_single_str(char **array, t_stack **stack_a)
 
 	atoi_result = 0;
 	j = 0;
-	while(array)
+	while(array[j])
 	{
 		atoi_result = ft_atoi(array[j]);
 		add_new_node(atoi_result, stack_a);
+		j++;
 	}
 }
 
