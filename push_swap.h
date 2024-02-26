@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/02/26 12:18:42 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/02/26 13:26:13 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "../libft/libft.a/libft.h"
+# include "../libft/libft.h"
 typedef struct s_stack {
 	int value;
 	struct s_stack* next;
