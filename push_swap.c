@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/02/26 17:17:10 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/07 17:16:33 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*find_last_node(t_stack *stack_a)
     return (current);
 }
 
-void add_new_node(long atoi_result, t_stack **stack_a)
+void	add_new_node(long atoi_result, t_stack **stack_a)
 {
 	t_stack *new_node;
 
@@ -38,8 +38,10 @@ void add_new_node(long atoi_result, t_stack **stack_a)
 		find_last_node(*stack_a)->next = new_node;
 }
 
-void	ft_handle_str(char **array, t_stack **stack_a)
+void	ft_handle_str(char **array, t_stack **stack_a_pointer)
 {
+/*la fonction prend un pointeur qui pointe sur un autre (stack_a)
+ qui pointe un element (noeud) de type t_stack*/
 	long	atoi_result;
 	int		j;
 
@@ -48,17 +50,17 @@ void	ft_handle_str(char **array, t_stack **stack_a)
 	while(array[j])
 	{
 		atoi_result = ft_atoi(array[j]);
-		add_new_node(atoi_result, stack_a);
+		add_new_node(atoi_result, stack_a_pointer);
 		j++;
 	}
-	/*t_stack *current_node = *stack_a;
-		while(current_node)
-	{
-		printf("%d", current_node->value);
-		current_node = current_node->next;
-	}*/
+	check_stack(stack_a_pointer);
 }
 
+int test(int res)
+{
+	res = 3;
+	return (res);
+}
 int main (int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -69,16 +71,17 @@ int main (int argc, char **argv)
 		return (0);
 	if (argc == 2)
 	{
-			result_of_split = ft_split(argv[1], ' ');
+		puts("split");
+		result_of_split = ft_split(argv[1], ' ');
+		printf("first nb: %c\n\n", result_of_split[0][1]);
 		ft_handle_str(result_of_split, &stack_a);
 	}
 	else
+	//argv +1 correspond au tableau de tableau argv le +1 skip le a.out
 		ft_handle_str(argv+1, &stack_a);
-			return (0);
-		/*while (argv)
-		{
-			ft_handle_multiple_str(argv);
-			argv++;
-		}*/
+	int res = 4;
 
+	res = test(res);
+	printf("\nres  %d\n", res);
+	return (0);
 }
