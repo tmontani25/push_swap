@@ -3,16 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/07 17:52:38 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:40:33 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_stack(t_stack **stack_a)
+int	check_special_chars(char **array)
+{
+	while (array[j])
+	{
+		while (array[j][n])
+		{
+			
+		}
+	}
+}
+int	check_same_nb(int nb, t_stack *stack_a)
+{
+	if (stack_a != NULL)
+	{
+		while (stack_a->next)
+		{
+			if (stack_a->value == nb)
+				return (0);
+			stack_a = stack_a->next;
+		}
+	}
+	return (1);
+}
+void	check_stack(t_stack **stack_a)
 {
 
 	int count;
@@ -28,7 +51,6 @@ int check_stack(t_stack **stack_a)
 	count++;
 	printf("number of nodes: %d\n", count);
 	print_stack(stack_a);
-	return(count);
 }
 void print_stack(t_stack **stack_a)
 {
@@ -40,5 +62,5 @@ void print_stack(t_stack **stack_a)
 		printf("node: %d\n", current->value);
 		current = current->next;
 	}
-
+	printf("node: %d\n", current->value);
 }

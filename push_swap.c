@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/07 17:16:33 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:22:27 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	add_new_node(long atoi_result, t_stack **stack_a)
 		find_last_node(*stack_a)->next = new_node;
 }
 
-void	ft_handle_str(char **array, t_stack **stack_a_pointer)
+int	ft_handle_str(char **array, t_stack **stack_a_pointer)
 {
 /*la fonction prend un pointeur qui pointe sur un autre (stack_a)
  qui pointe un element (noeud) de type t_stack*/
@@ -49,18 +49,20 @@ void	ft_handle_str(char **array, t_stack **stack_a_pointer)
 	j = 0;
 	while(array[j])
 	{
+		if(!check_special_chars(array));
+		return (write(1, "Error", 6));
 		atoi_result = ft_atoi(array[j]);
+		if (atoi_result > INT_MAX || atoi_result < INT_MIN)
+		return (write(1, "Error", 6));
+		if(!check_same_nb(atoi_result, *stack_a_pointer))
+			return(write(1, "Error", 6));
 		add_new_node(atoi_result, stack_a_pointer);
 		j++;
 	}
 	check_stack(stack_a_pointer);
+	return (0);
 }
 
-int test(int res)
-{
-	res = 3;
-	return (res);
-}
 int main (int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -68,20 +70,14 @@ int main (int argc, char **argv)
 
 	stack_a = NULL;
 	if (argc < 2)
-		return (0);
+		return (write(1, "Error\n", 6));
 	if (argc == 2)
 	{
-		puts("split");
 		result_of_split = ft_split(argv[1], ' ');
-		printf("first nb: %c\n\n", result_of_split[0][1]);
+//		printf("first nb: %c\n\n", result_of_split[0][1]);
 		ft_handle_str(result_of_split, &stack_a);
 	}
 	else
 	//argv +1 correspond au tableau de tableau argv le +1 skip le a.out
 		ft_handle_str(argv+1, &stack_a);
-	int res = 4;
-
-	res = test(res);
-	printf("\nres  %d\n", res);
-	return (0);
 }
