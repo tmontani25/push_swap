@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/09 15:40:33 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:38:45 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 int	check_special_chars(char **array)
 {
+	int	j;
+	int	n;
+
+	j = 0;
+	n = 0;
 	while (array[j])
 	{
 		while (array[j][n])
 		{
+			while (array[j])
+			if (array[j][n] < '0' || array[j][n] > '9'
+			&& array[j][n]  )
 			
 		}
 	}

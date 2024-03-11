@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/09 15:22:27 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:22:41 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void	add_new_node(long atoi_result, t_stack **stack_a)
 {
 	t_stack *new_node;
 
-	new_node = malloc(sizeof(t_stack *));
+	new_node = malloc(sizeof(t_stack));
+	printf("size %lu", sizeof(t_stack));
+
 	if (!new_node)
 		return ;
 	new_node->value = atoi_result;
