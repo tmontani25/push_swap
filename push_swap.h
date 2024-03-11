@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/09 14:33:36 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:29:34 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ typedef struct s_stack
 void check_stack(t_stack **stack_a);
 void print_stack(t_stack **stack_a);
 int	check_same_nb(int nb, t_stack *stack_a);
+int	check_special_chars(char **array);
 
 #endif

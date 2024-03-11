@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/11 13:22:41 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:28:40 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_handle_str(char **array, t_stack **stack_a_pointer)
 	j = 0;
 	while(array[j])
 	{
-		if(!check_special_chars(array));
+		if(check_special_chars(array))
 		return (write(1, "Error", 6));
 		atoi_result = ft_atoi(array[j]);
 		if (atoi_result > INT_MAX || atoi_result < INT_MIN)

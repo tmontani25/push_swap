@@ -3,32 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/11 13:38:45 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:32:18 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	is_digit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 int	check_special_chars(char **array)
 {
+	int	lines;
 	int	j;
 	int	n;
+	int i;
 
 	j = 0;
 	n = 0;
-	while (array[j])
+	lines = 0;
+	i = 0;
+	while (array[lines] != NULL)
 	{
-		while (array[j][n])
-		{
-			while (array[j])
-			if (array[j][n] < '0' || array[j][n] > '9'
-			&& array[j][n]  )
-			
-		}
+		printf("string: %s\n", array[lines]);
+		lines++;
 	}
+	printf("value of lines: %d\n", lines);
+	while (i < lines)
+	{
+		n = 0;
+		printf("value of i: %d\n", i);
+		while (array[j][n] != '\0')
+		{
+			printf("character being checked: %c\n", array[j][n]);
+			if(!is_digit(array[j][n]))
+				return (1);
+			n++;
+		}
+		j++;
+		i++;
+	}
+		return (0);
 }
 int	check_same_nb(int nb, t_stack *stack_a)
 {
@@ -72,3 +93,7 @@ void print_stack(t_stack **stack_a)
 	}
 	printf("node: %d\n", current->value);
 }
+//int main (int argc, char *argv[])
+//{
+//	printf("%d", check_special_chars(argv + 1));
+//}
