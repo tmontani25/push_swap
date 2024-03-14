@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+         #
+#    By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 15:40:04 by tmontani          #+#    #+#              #
-#    Updated: 2024/03/09 22:58:43 by tmontani         ###   ########.fr        #
+#    Updated: 2024/03/14 17:12:01 by tmontani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Liste des fichiers source pour push_swap
-SRCS_PUSH_SWAP = push_swap.c check_stack.c
+SRCS_PUSH_SWAP = push_swap.c check_stack.c rotate.c reverse_rotate.c swap.c push.c
 
 # Liste des fichiers objets pour push_swap
 OBJS_PUSH_SWAP = $(SRCS_PUSH_SWAP:.c=.o)

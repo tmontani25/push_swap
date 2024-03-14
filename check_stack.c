@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/11 17:32:18 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:12:00 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,12 @@ int	check_special_chars(char **array)
 	lines = 0;
 	i = 0;
 	while (array[lines] != NULL)
-	{
-		printf("string: %s\n", array[lines]);
 		lines++;
-	}
-	printf("value of lines: %d\n", lines);
 	while (i < lines)
 	{
 		n = 0;
-		printf("value of i: %d\n", i);
 		while (array[j][n] != '\0')
 		{
-			printf("character being checked: %c\n", array[j][n]);
 			if(!is_digit(array[j][n]))
 				return (1);
 			n++;
@@ -78,8 +72,9 @@ void	check_stack(t_stack **stack_a)
 		count++;
 	}
 	count++;
-	printf("number of nodes: %d\n", count);
+	puts("\n stack avant ra:\n");
 	print_stack(stack_a);
+	ra(stack_a);
 }
 void print_stack(t_stack **stack_a)
 {
