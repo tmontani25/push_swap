@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/14 17:12:03 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:09:32 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int	check_special_chars(char **array);
 int sa(t_stack **stack_a);
 int sb(t_stack **stack_b);
 int ra(t_stack **stack_a);
+int rra(t_stack **stack_a);
+int	rrb(t_stack **stack_b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/14 18:10:52 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:11:57 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	check_stack(t_stack **stack_a)
 		return ;
 	puts("\n stack avant ra:\n");
 	print_stack(stack_a);
-	ra(stack_a);
+	rra(stack_a);
 
 }
 void print_stack(t_stack **stack_a)
