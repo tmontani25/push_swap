@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/15 15:09:32 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:03:01 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int sb(t_stack **stack_b);
 int ra(t_stack **stack_a);
 int rra(t_stack **stack_a);
 int	rrb(t_stack **stack_b);
+int	pa(t_stack **stack_a, t_stack **stack_b);
+int pb(t_stack **stack_b, t_stack **stack_a);
 
 #endif

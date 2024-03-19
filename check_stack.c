@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/15 15:11:57 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:10:47 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ int	check_same_nb(int nb, t_stack *stack_a)
 }
 void	check_stack(t_stack **stack_a)
 {
+	t_stack *stack_2 = NULL;
+
+	t_stack **stack_b;
+	
+	stack_b = &stack_2;
+
 
 	int count;
 	t_stack *current;
@@ -74,10 +80,8 @@ void	check_stack(t_stack **stack_a)
 	count++;
 	if (count == 0)
 		return ;
-	puts("\n stack avant ra:\n");
+	pa(stack_a, stack_b);
 	print_stack(stack_a);
-	rra(stack_a);
-
 }
 void print_stack(t_stack **stack_a)
 {
