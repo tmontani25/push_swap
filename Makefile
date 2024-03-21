@@ -6,7 +6,7 @@
 #    By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 15:40:04 by tmontani          #+#    #+#              #
-#    Updated: 2024/03/15 15:09:41 by tmontani         ###   ########.fr        #
+#    Updated: 2024/03/21 16:45:47 by tmontani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Liste des fichiers source pour push_swap
-SRCS_PUSH_SWAP = push_swap.c check_stack.c rotate.c reverse_rotate.c swap.c push.c
+SRCS_PUSH_SWAP = push_swap.c stack_utils.c rotate.c reverse_rotate.c swap.c push.c send_to_algo.c stack_utils2.c sort_3.c
 
 # Liste des fichiers objets pour push_swap
 OBJS_PUSH_SWAP = $(SRCS_PUSH_SWAP:.c=.o)

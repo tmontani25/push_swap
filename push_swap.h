@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/19 17:03:01 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:44:36 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_stack
 }					t_stack;
 
 
-void check_stack(t_stack **stack_a);
+int	check_stack(t_stack **stack_a);
 void print_stack(t_stack **stack_a);
-int	check_same_nb(int nb, t_stack *stack_a);
+int	check_same_nb(long nb, t_stack *stack_a);
 t_stack	*find_last_node(t_stack *stack_a);
 int	check_special_chars(char **array);
 int sa(t_stack **stack_a);
@@ -36,5 +36,8 @@ int rra(t_stack **stack_a);
 int	rrb(t_stack **stack_b);
 int	pa(t_stack **stack_a, t_stack **stack_b);
 int pb(t_stack **stack_b, t_stack **stack_a);
+void	send_to_algo(t_stack **stack_a, int stack_len);
+int	stack_sorted(t_stack *stack_a);
+int	sort_3(t_stack **stack_a);
 
 #endif

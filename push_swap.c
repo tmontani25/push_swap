@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/14 17:12:02 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:42:54 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	add_new_node(long atoi_result, t_stack **stack_a)
 	t_stack *new_node;
 
 	new_node = malloc(sizeof(t_stack));
-	printf("size %lu", sizeof(t_stack));
 
 	if (!new_node)
 		return ;
@@ -40,28 +39,33 @@ void	add_new_node(long atoi_result, t_stack **stack_a)
 		find_last_node(*stack_a)->next = new_node;
 }
 
-int	ft_handle_str(char **array, t_stack **stack_a_pointer)
+int	ft_handle_str(char **array, t_stack **stack_a)
 {
 /*la fonction prend un pointeur qui pointe sur un autre (stack_a)
  qui pointe un element (noeud) de type t_stack*/
 	long	atoi_result;
 	int		j;
+	int		stack_len;
 
 	atoi_result = 0;
 	j = 0;
 	while(array[j])
 	{
 		if(check_special_chars(array))
-		return (write(1, "Error", 6));
+		return (write(1, "Error special chars", 21));
 		atoi_result = ft_atoi(array[j]);
 		if (atoi_result > INT_MAX || atoi_result < INT_MIN)
-		return (write(1, "Error", 6));
-		if(!check_same_nb(atoi_result, *stack_a_pointer))
-			return(write(1, "Error", 6));
-		add_new_node(atoi_result, stack_a_pointer);
+		{
+			puts("inside");
+			return (write(1, "Error int over", 14));
+		}
+		if(!check_same_nb(atoi_result, *stack_a))
+			return(write(1, "Error same", 11));
+		add_new_node(atoi_result, stack_a);
 		j++;
 	}
-	check_stack(stack_a_pointer);
+	stack_len = check_stack(stack_a);
+	send_to_algo(stack_a, stack_len);
 	return (0);
 }
 

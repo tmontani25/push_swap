@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:57:01 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/19 17:11:54 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/21 10:42:36 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static	int	ft_push(t_stack **stack_1, t_stack **stack_2)
 
 	head_1->next = (*stack_2);
 	(*stack_2) = head_1;
+	puts("stack_2:\n");
 	print_stack(stack_2);
 	return (1);
 }

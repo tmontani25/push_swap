@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_stack.c                                      :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/19 17:10:47 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:34:30 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,23 @@ int	check_special_chars(char **array)
 	}
 		return (0);
 }
-int	check_same_nb(int nb, t_stack *stack_a)
+int	check_same_nb(long nb, t_stack *stack_a)
 {
-	if (stack_a != NULL)
-	{
-		while (stack_a->next)
+	if (!stack_a)
+		return (1);
+		while (stack_a)
 		{
 			if (stack_a->value == nb)
 				return (0);
 			stack_a = stack_a->next;
 		}
-	}
 	return (1);
 }
-void	check_stack(t_stack **stack_a)
+int	check_stack(t_stack **stack_a)
 {
 	t_stack *stack_2 = NULL;
-
 	t_stack **stack_b;
-	
 	stack_b = &stack_2;
-
-
 	int count;
 	t_stack *current;
 
@@ -79,21 +74,21 @@ void	check_stack(t_stack **stack_a)
 	}
 	count++;
 	if (count == 0)
-		return ;
-	pa(stack_a, stack_b);
-	print_stack(stack_a);
+		return (0);
+
+	//print_stack(stack_a);
+	return (count);
 }
 void print_stack(t_stack **stack_a)
 {
 	t_stack *current;
 
 	current = *stack_a;
-	while (current->next)
+	while (current != NULL)
 	{
 		printf("node: %d\n", current->value);
 		current = current->next;
 	}
-	printf("node: %d\n", current->value);
 }
 //int main (int argc, char *argv[])
 //{
