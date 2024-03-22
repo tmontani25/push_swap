@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/21 15:34:30 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:11:07 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_stack(t_stack **stack_a)
 
 	current = *stack_a;
 	count = 0;
-	while (current->next)
+	while (current)
 	{
 		current = current->next;
 		count++;

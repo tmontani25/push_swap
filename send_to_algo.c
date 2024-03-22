@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:38:29 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/21 16:41:58 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:11:08 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	send_to_algo(t_stack **stack_a, int stack_len)
 		return ;
 	if (stack_len == 3)
 		sort_3(stack_a);
-	/*if (stack_len > 3)
-		big_sort(stack_a);
-		return ;*/
+	if (stack_len > 3)
+		big_sort(stack_a, stack_len);
+		return ;
 }
