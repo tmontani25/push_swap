@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/22 18:11:14 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:10:41 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ void	send_to_algo(t_stack **stack_a, int stack_len);
 int	stack_sorted(t_stack *stack_a);
 int	sort_3(t_stack **stack_a);
 void big_sort(t_stack **stack_a, int stack_len);
+void	push_in_b(t_stack **stack_a, t_stack **stack_b);
+void	find_target(t_stack **stack_a, t_stack *stack_b);
+int	is_above(int index, t_stack **stack);
 
 #endif
