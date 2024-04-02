@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/28 16:48:53 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:59:16 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_handle_str(char **array, t_stack **stack_a)
 		add_new_node(atoi_result, stack_a);
 		j++;
 	}
-	stack_len = check_stack(stack_a);
+	stack_len = check_stack((*stack_a));
 	send_to_algo(stack_a, stack_len);
 	return (0);
 }

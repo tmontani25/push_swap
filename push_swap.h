@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/03/28 17:15:20 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:59:10 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ struct s_stack
 };
 
 
-int	check_stack(t_stack **stack_a);
+int	check_stack(t_stack *stack_a);
 void print_stack(t_stack **stack_a);
 int	check_same_nb(long nb, t_stack *stack_a);
 t_stack	*find_last_node(t_stack *stack_a);
@@ -49,7 +49,9 @@ int	sort_3(t_stack **stack_a);
 void big_sort(t_stack **stack_a, int stack_len);
 void	push_in_b(t_stack **stack_a, t_stack **stack_b);
 void	find_target(t_stack *stack_a, t_stack *stack_b);
-int	is_above(int index, t_stack **stack);
+int    is_above(t_stack *stack);
+void	set_above(t_stack *stack_a, t_stack *stack_b);
 t_stack	*find_smallest(t_stack *stack_a);
+void	find_index(t_stack *stack_a, t_stack *stack_b);
 
 #endif
