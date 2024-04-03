@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   send_to_algo.c                                     :+:      :+:    :+:   */
+/*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 13:38:29 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:46 by tmontani         ###   ########.fr       */
+/*   Created: 2024/04/03 15:50:22 by tmontani          #+#    #+#             */
+/*   Updated: 2024/04/03 17:10:40 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	send_to_algo(t_stack **stack_a, int stack_len)
+void ft_execute(t_stack **stack_a, t_stack **stack_b)
 {
-	print_stack(stack_a);
-	if (stack_len == 0)
-		return ;
-	else if (stack_len == 2)
-		if((*stack_a)->next->value < (*stack_a)->value)
-			sa(stack_a);
-	if (stack_sorted((*stack_a)))
-		return ;
-	if (stack_len == 3)
-		sort_3(stack_a);
-	if (stack_len > 3)
-	{
-		big_sort(stack_a, stack_len);
-	}
-		return ;
+    t_stack *cheapest;
+
+    cheapest = NULL;
+    cheapest = find_cheapest(stack_b);
+
+    if (cheapest->above == 1 && cheapest->target->above == 1)
+    {
+        
+
+    }
+
+
+
 }

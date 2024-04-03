@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/02 15:59:10 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:10:45 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ int    is_above(t_stack *stack);
 void	set_above(t_stack *stack_a, t_stack *stack_b);
 t_stack	*find_smallest(t_stack *stack_a);
 void	find_index(t_stack *stack_a, t_stack *stack_b);
+void    push_cost1(t_stack *stack_a, t_stack *stack_b);
+int   push_cost2(t_stack *stack_b, t_stack *stack_a, t_stack *current);
+t_stack *find_cheapest(t_stack *stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 16:28:04 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/02 17:09:18 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:10:37 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,22 @@ void big_sort(t_stack **stack_a, int stack_len)
 	int	sa_len;
 	int sb_len;
 	int	index;
+	t_stack *cheapest;
 
 	sa_len = 0;
 	sb_len = 0;
 	stack_b = NULL;
 	index = 1;
+	cheapest = NULL;
 	push_in_b(stack_a, &stack_b);
 	sort_3(stack_a);
-	puts("stack after sort3:\n");
-
 	//while (stack_b)
 	//{
 		find_target(*stack_a, stack_b); // trouver toutes les targets avant de push le nombre
 		find_index((*stack_a), stack_b);//trouver chaque index des deux stacks
 		set_above((*stack_a), stack_b); // trouver pour chaque noeud s'il est dans la partie sup ou inf
-		push_cost(stack_a, stack_b);	// calculer le push_cost grace aux informations contenue dans chaque noeud
-		//ft_execute(stack_a, stack_b);	//executer les mouvements necessaire apres avoir trouver le cheapest
+		push_cost((*stack_a), stack_b);	// calculer le push_cost grace aux informations contenue dans chaque noeud
+		ft_execute(stack_a, stack_b, cheapest);	//executer les mouvements necessaire apres avoir trouver le cheapest
 		//stack_b = stack_b->next;
 //	}
 
