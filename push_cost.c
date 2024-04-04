@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:58:02 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:39 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:05:23 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_stack *find_cheapest(t_stack *stack_b)
     cheapest = stack_b;
     while (stack_b)
     {
-        if (cheapest > stack_b->push_cost)
-            cheapest = stack_b->push_cost;
+        if (cheapest->push_cost > stack_b->push_cost)
+            cheapest = stack_b;
         stack_b = stack_b->next;
     }
     return (cheapest);
@@ -53,12 +53,13 @@ int   push_cost2(t_stack *stack_b, t_stack *stack_a, t_stack *current)
 
 void    push_cost1(t_stack *stack_a, t_stack *stack_b)
 {
+    puts("push_cost1\n");
     t_stack *current;
 
     current = stack_b;
     while (stack_b)
     {
-        current->push_cost = on_top(stack_b, stack_a, current);
+        current->push_cost = push_cost2(stack_b, stack_a, current);
         current = current->next;
         stack_b = stack_b->next;
     }

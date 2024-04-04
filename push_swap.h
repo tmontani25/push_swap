@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:43:15 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:45 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:13:21 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ int	check_special_chars(char **array);
 int sa(t_stack **stack_a);
 int sb(t_stack **stack_b);
 int ra(t_stack **stack_a);
+int	rb(t_stack **stack_b);
+int rr(t_stack **stack_a, t_stack **stack_b);
 int rra(t_stack **stack_a);
 int	rrb(t_stack **stack_b);
 int	pa(t_stack **stack_a, t_stack **stack_b);
 int pb(t_stack **stack_b, t_stack **stack_a);
+int rrr(t_stack **stack_a, t_stack **stack_b);
 void	send_to_algo(t_stack **stack_a, int stack_len);
 int	stack_sorted(t_stack *stack_a);
 int	sort_3(t_stack **stack_a);
@@ -56,5 +59,8 @@ void	find_index(t_stack *stack_a, t_stack *stack_b);
 void    push_cost1(t_stack *stack_a, t_stack *stack_b);
 int   push_cost2(t_stack *stack_b, t_stack *stack_a, t_stack *current);
 t_stack *find_cheapest(t_stack *stack_b);
+void ft_execute(t_stack **stack_a, t_stack **stack_b);
+void	ft_rotate_a(t_stack *target, t_stack **stack_a);
+void ft_rotate_b(t_stack *cheapest, t_stack **stack_b);
 
 #endif
