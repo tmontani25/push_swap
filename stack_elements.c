@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:32:03 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:49 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:28:23 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	find_index(t_stack *stack_a, t_stack *stack_b)
 {
+	puts("find_index\n");
 	int	index;
 
 	index = 0;
@@ -70,6 +71,7 @@ int	is_above(t_stack *stack)
 
 void	set_above(t_stack *stack_a, t_stack *stack_b)
 {
+	puts("set_above\n");
 	while (stack_a)
 	{
 		stack_a->above = is_above(stack_a);
@@ -88,14 +90,14 @@ void	find_target(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*target;
 	long	value;
 
-	value = LONG_MAX;
-	temp = stack_a;
 	target = NULL;
 	while(stack_b)
 	{
+		temp = stack_a;
+		value = LONG_MAX;
 		while (temp)
 		{
-			if (temp->value > stack_b->value && value > temp->value)
+			if (temp->value > stack_b->value && temp->value < value)
 			{
 				value = temp->value;
 				target = temp;
@@ -106,7 +108,8 @@ void	find_target(t_stack *stack_a, t_stack *stack_b)
 			stack_b->target = find_smallest(stack_a);
 		else
 			stack_b->target = target;
-		printf("target: %d\n", stack_b->target->value);
+		printf("stack_b target: %d\n", stack_b->target->value);
 		stack_b = stack_b->next;
-	}		
+	}
+	//print_stack(&stack_b);
 }
