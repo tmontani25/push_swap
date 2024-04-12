@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:13:36 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/04 15:33:47 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/12 14:56:43 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,15 @@ int	is_digit(char c)
 		return (1);
 	return (0);
 }
-int	check_special_chars(char **array)
+int	check_special_chars(char *str)
 {
-	int	lines;
-	int	j;
-	int	n;
 	int i;
-
-	j = 0;
-	n = 0;
-	lines = 0;
+	
 	i = 0;
-	while (array[lines] != NULL)
-		lines++;
-	while (i < lines)
+	while (str[i])
 	{
-		n = 0;
-		while (array[j][n] != '\0')
-		{
-			if(!is_digit(array[j][n]))
-				return (1);
-			n++;
-		}
-		j++;
+		if (!is_digit(str[i]))
+			return (1);
 		i++;
 	}
 		return (0);
@@ -59,35 +45,30 @@ int	check_same_nb(long nb, t_stack *stack_a)
 }
 int	check_stack(t_stack *stack_a)
 {
+	int count;
+	t_stack *temp;
+	temp = stack_a;
+	count = 0;
+
 	if (stack_a == NULL)
 		return(0);
-	int count;
-	t_stack *current;
-
-	current = stack_a;
-	count = 0;
-	while (current->next)
+	while (temp)
 	{
-		current = current->next;
 		count++;
+		temp = temp->next;
 	}
-	count++;
-	if (count == 0)
+	if (count == 1)
 		return (0);
 	return (count);
 }
 void print_stack(t_stack **stack_a)
-{
-	t_stack *current;
+ {
+ 	t_stack *current;
 
-	current = *stack_a;
-	while (current != NULL)
-	{
-		printf("node: %d\n", current->value);
-		current = current->next;
-	}
-}
-//int main (int argc, char *argv[])
-//{
-//	printf("%d", check_special_chars(argv + 1));
-//}
+ 	current = *stack_a;
+ 	while (current != NULL)
+ 	{
+ 		printf("node: %d\n", current->value);
+ 		current = current->next;
+ 	}
+ }

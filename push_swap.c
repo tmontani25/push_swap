@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:20:25 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/02 15:59:16 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:38:51 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ void	add_new_node(long atoi_result, t_stack **stack_a)
 
 	new_node = malloc(sizeof(t_stack));
 
-	if (!new_node)
-		return ;
+	// if (!new_node)
+	// {
+	// 	free(new_node);
+	// 	return ;
+	// }
 	new_node->value = atoi_result;
 	new_node->next = NULL;
 	if (!(*stack_a))
@@ -51,16 +54,16 @@ int	ft_handle_str(char **array, t_stack **stack_a)
 	j = 0;
 	while(array[j])
 	{
-		if(check_special_chars(array))
-		return (write(1, "Error special chars", 21));
+		if(check_special_chars(array[j]))
+				return (ft_free(stack_a));
+		if (!ft_handle_operators(array[j]))
+			return (ft_free(stack_a));
 		atoi_result = ft_atoi(array[j]);
 		if (atoi_result > INT_MAX || atoi_result < INT_MIN)
-		{
-			puts("inside");
-			return (write(1, "Error int over", 14));
-		}
+				return (ft_free(stack_a));
 		if(!check_same_nb(atoi_result, *stack_a))
-			return(write(1, "Error same", 11));
+				return (write(2, "Error\n", 6));
+				//return(ft_free(stack_a));
 		add_new_node(atoi_result, stack_a);
 		j++;
 	}
@@ -76,10 +79,12 @@ int main (int argc, char **argv)
 
 	stack_a = NULL;
 	if (argc < 2)
-		return (write(1, "Error\n", 6));
+		return (0);
 	if (argc == 2)
 	{
 		result_of_split = ft_split(argv[1], ' ');
+		if (!result_of_split)
+			return (0);
 //		printf("first nb: %c\n\n", result_of_split[0][1]);
 		ft_handle_str(result_of_split, &stack_a);
 	}

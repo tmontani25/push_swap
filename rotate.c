@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:57:06 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/04 15:07:51 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:21:10 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int ft_rotate(t_stack **head)
 	t_stack *current_node = *head;
 
 	// Trouver le dernier nœud
-	current_node = find_last_node(*head);
+	current_node = find_last_node(*head); 
 	current_node->next = first_node; // faire pointer le dernier noeud vers le premier
 	(*head) = second_node;
 	first_node->next = NULL;
@@ -49,7 +49,7 @@ int ra(t_stack **stack_a)
 {
 	if(!ft_rotate(stack_a))
 		return (0);
-	write(1, "ra", 2);
+	write(1, "ra\n", 3);
 	return (1);
 }
 

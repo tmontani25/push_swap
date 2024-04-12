@@ -6,12 +6,32 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:50:22 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/04 15:16:00 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/12 14:16:21 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+void	last_sort(t_stack **stack_a)
+{
+	t_stack *smallest;
+	smallest = find_smallest((*stack_a));
+	if (smallest->above == 1)
+	{
+		while (smallest != (*stack_a))
+		{
+			ra(stack_a);
+		}
+	}
+	if (smallest->above == 0)
+	{
+		while (smallest != (*stack_a))
+		{
+			rra(stack_a);
+		}
+	}
+}
 void ft_rotate_b(t_stack *cheapest, t_stack **stack_b)
 {
 	while (cheapest != (*stack_b))
@@ -29,14 +49,14 @@ void	ft_rotate_a(t_stack *target, t_stack **stack_a)
 	{
 		if (target->above == 0)
 			rra(stack_a);
-		if (target->above)
+		if (target->above == 1)
 			ra(stack_a);
 	}
 }
 
-void ft_execute(t_stack **stack_a, t_stack **stack_b)
+void	ft_execute(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *cheapest;
+	t_stack	*cheapest;
 
 	cheapest = find_cheapest((*stack_b));
 
@@ -51,9 +71,15 @@ void ft_execute(t_stack **stack_a, t_stack **stack_b)
 				rrr(stack_a, stack_b);
 		}
 	}
+	// printf("cheapest value %d\n", cheapest->value);
+	// printf("cheapest push_cost %d\n", cheapest->push_cost);
 		if (cheapest != (*stack_b))
 			ft_rotate_b(cheapest, stack_b);
-		if (cheapest != (*stack_a))
+		if (cheapest->target != (*stack_a))
+		{
+			//printf("cheapest->target: %d\n", cheapest->target->value);
 			ft_rotate_a(cheapest->target, stack_a);
-	pb(stack_b, stack_a);
+		}
+
+	pa(stack_b, stack_a);
 }

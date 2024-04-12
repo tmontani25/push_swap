@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:55:51 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/02 14:39:23 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:45:17 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int ft_reverse_rotate(t_stack **head)
     t_stack *last_node;
 
     // Trouver l'avant-dernier nœud
-    while (current_node->next != NULL && current_node->next->next != NULL) {
+    while (current_node->next != NULL && current_node->next->next != NULL)
+    {
         current_node = current_node->next;
     }
 
@@ -42,7 +43,7 @@ int rrr(t_stack **stack_a, t_stack **stack_b)
 
     if (a == 0 || b == 0)
         return (0);
-    write(1, "rr\n", 4);
+    write(1, "rr\n", 3);
     return (1);
 
 

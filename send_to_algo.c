@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:38:29 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:46 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:23:34 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	send_to_algo(t_stack **stack_a, int stack_len)
 {
-	print_stack(stack_a);
+	// print_stack(stack_a);
 	if (stack_len == 0)
 		return ;
 	else if (stack_len == 2)
