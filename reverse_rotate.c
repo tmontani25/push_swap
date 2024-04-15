@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tmontani <tmontani@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:55:51 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/15 15:30:38 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:42:26 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int ft_reverse_rotate(t_stack **head)
 
 int rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	puts("1");
+// 	puts("1");
    ft_reverse_rotate(stack_a);
    ft_reverse_rotate(stack_b);
 	write(1, "rrr\n", 4);
