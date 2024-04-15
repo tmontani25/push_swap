@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:50:22 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/12 14:16:21 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:44:59 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_rotate_a(t_stack *target, t_stack **stack_a)
 	{
 		if (target->above == 0)
 			rra(stack_a);
-		if (target->above == 1)
+		else if (target->above == 1)
 			ra(stack_a);
 	}
 }
@@ -59,16 +59,30 @@ void	ft_execute(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*cheapest;
 
 	cheapest = find_cheapest((*stack_b));
+	puts("stack_a:\n");
+	print_stack(stack_a);
+	puts("stack_b:\n");
+	print_stack(stack_b);
+	printf("cheapest: %d\n\n", cheapest->value);
+	
 
-	if ((cheapest->above == 1 && cheapest->target->above == 1) 
+	if ((cheapest->above == 1 && cheapest->target->above == 1)
 		|| (cheapest->above = 0 && cheapest->target->above == 0))
 	{
+		// printf("cheapest->above: %d\n", cheapest->above);
+		// printf("cheapest->target->above: %d\n\n", cheapest->target->above);
 		while (cheapest != (*stack_b) && cheapest->target != (*stack_a))
 		{
+			
+			// puts("get in there mf");
+			// printf("cheapest above: %d\n", cheapest->above);
+		 	// printf("cheapest target above: %d\n", cheapest->target->above);
 			if (cheapest->above == 1 && cheapest->target->above == 1)
 				rr(stack_a, stack_b);
-			else if (cheapest->above == 0 && cheapest->target->above == 0)
+			else
+			{
 				rrr(stack_a, stack_b);
+			}
 		}
 	}
 	// printf("cheapest value %d\n", cheapest->value);

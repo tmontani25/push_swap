@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 16:28:04 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/12 15:44:51 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:34:28 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ void big_sort(t_stack **stack_a, int stack_len)
 		set_above((*stack_a), stack_b); // trouver pour chaque noeud s'il est dans la partie sup ou inf
 		push_cost1((*stack_a), stack_b); // calculer le push_cost grace aux informations contenue dans chaque noeud
 		ft_execute(stack_a, &stack_b);	//executer les mouvements necessaire apres avoir trouver le cheapest
-		last_sort(stack_a);
 	}
+		last_sort(stack_a);
+
 	// find_index((*stack_a), stack_b);
 	// while ((*stack_a))
 	// {
@@ -46,5 +47,5 @@ void big_sort(t_stack **stack_a, int stack_len)
 	// 	(*stack_a) = (*stack_a)->next;
 	// }
 // puts("stack finish:\n");
-// 	print_stack(stack_a);
+//print_stack(stack_a);
 }

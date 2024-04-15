@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:55:51 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/12 13:45:17 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:30:38 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,37 @@
 
 int ft_reverse_rotate(t_stack **head)
 {
-    if (head == NULL || (*head)->next == NULL)
-        return (0); // Rien à faire si la pile est vide ou contient un seul élément
+	if (head == NULL || (*head)->next == NULL)
+		return (0); // Rien à faire si la pile est vide ou contient un seul élément
 
-    t_stack *current_node = *head;
-    t_stack *last_node;
+	t_stack *current_node = *head;
+	t_stack *last_node;
 
-    // Trouver l'avant-dernier nœud
-    while (current_node->next != NULL && current_node->next->next != NULL)
-    {
-        current_node = current_node->next;
-    }
+	// Trouver l'avant-dernier nœud
+	while (current_node->next != NULL && current_node->next->next != NULL)
+	{
+		current_node = current_node->next;
+	}
 
-    last_node = current_node->next;
-    current_node->next = NULL;
-    last_node->next = *head;
-    *head = last_node;
-    return(1);
+	last_node = current_node->next;
+	current_node->next = NULL;
+	last_node->next = *head;
+	*head = last_node;
+	return(1);
 }
 
 int rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    int a;
-    int b;
-
-   a = ft_reverse_rotate(stack_a);
-   b = ft_reverse_rotate(stack_b);
-
-    if (a == 0 || b == 0)
-        return (0);
-    write(1, "rr\n", 3);
-    return (1);
-
-
-    
+	puts("1");
+   ft_reverse_rotate(stack_a);
+   ft_reverse_rotate(stack_b);
+	write(1, "rrr\n", 4);
+	return (1);
 }
 int rra(t_stack **stack_a)
 {
-    if(!ft_reverse_rotate(stack_a))
-        return (0);
+	if(!ft_reverse_rotate(stack_a))
+		return (0);
 	write(1, "rra\n", 4);
 	return (1);
 }

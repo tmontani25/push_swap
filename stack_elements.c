@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:32:03 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/12 15:53:19 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:37:13 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,16 @@ int	is_above(t_stack *stack, int len)
 	// printf("index: %d\n", stack->index);
 	if (len % 2 == 0)
 	{
-		if (stack->index < len / 2 )
+		if (stack->index <= len / 2 )
 			return (1);
 		else
 			return (0);
 	}
 	else if (len % 2 != 0)
 		{
-			//printf("index: %d\n", stack->index);
-			if (stack->index <= len / 2)
+			// printf("number: %d\n", stack->value);
+			// printf("index: %d\n", stack->index);
+			if (stack->index <= len / 2 + 1)
 				return (1);
 			else
 				return (0);
@@ -81,16 +82,19 @@ void	set_above(t_stack *stack_a, t_stack *stack_b)
 	
 	len_a = check_stack(stack_a);
 	len_b = check_stack(stack_b);
+	//printf("len_b: %d\n", len_b);
 	while (stack_a)
 	{
 		stack_a->above = is_above(stack_a, len_a);
-		//printf("number: %d\n above: %d\n\n", stack_a->value, stack_a->above);
+		// printf("number_a: %d\n", stack_a->value);
+		// printf("stack_a->above: %d\n", stack_a->above);
 		stack_a = stack_a->next;
 	}
 	while (stack_b)
 	{
 		stack_b->above = is_above(stack_b, len_b);
-			//printf("number: %d\n target: %d\n\n", stack_b->value, stack_b->target->value);
+			// printf("number_b: %d\n", stack_b->value);
+			// printf("stack_b->above: %d\n", stack_b->above);
 		stack_b = stack_b->next;
 	}
 }
@@ -100,7 +104,6 @@ void	find_target(t_stack *stack_a, t_stack *stack_b)
 	t_stack *temp;
 	t_stack	*target;
 	long	value;
-	int i = 0;
 
 	target = NULL;
 	while(stack_b)
@@ -120,10 +123,9 @@ void	find_target(t_stack *stack_a, t_stack *stack_b)
 			stack_b->target = find_smallest(stack_a);
 		else
 			stack_b->target = target;
-		//printf("number: %d\n", stack_b->value);
-		//printf("target: %d\n\n", stack_b->target->value);
+		// printf("number: %d\n", stack_b->value);
+		// printf("target: %d\n\n", stack_b->target->value);
 		//printf("stack_b target%d: %d\n", i, stack_b->target->value);
-		i++;
 		stack_b = stack_b->next;
 	}
 	//print_stack(&stack_b);

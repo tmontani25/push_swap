@@ -6,7 +6,7 @@
 /*   By: tmontani <tmontani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:57:06 by tmontani          #+#    #+#             */
-/*   Updated: 2024/04/12 15:21:10 by tmontani         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:00:58 by tmontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,8 @@ static int ft_rotate(t_stack **head)
 
 int rr(t_stack **stack_a, t_stack **stack_b)
 {
-	int	a;
-	int	b;
-
-	a = 0;
-	b = 0;
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	if (a == 0 || b == 0)
-		return (0);
 	write(1, "rr\n", 3);
 	return (1);
 
